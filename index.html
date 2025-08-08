@@ -62,7 +62,31 @@
       <!-- le contenue de la page seras injecté ici -->
     </main>
 
-    <footer>le footer de mon site</footer>
+    <footer class="bg-dark text-white text-center footer">
+      <div class="row">
+        <!--Classe row pour en faire des colones(12 par defaut)-->
+        <div class="col-12 col-lg-4">
+          <!--Je prends toute la largeur de la page-->
+          <h3 class="text-primary">Nos horraires</h3>
+          <p>Du mardi au dimanche 12:00-14:00 18:00-23:00</p>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <!--Je prend la moitier de la page-->
+          <p>
+            Quai Antique <br />
+            8 rue de la pleine <br />
+            Valenton 94460 <br />
+            0143762643
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <!--Je prend l'autre moitier de la page-->
+          <p>contact@quaiantique.com</p>
+        </div>
+      </div>
+    </footer>
 
     <script type="module" src="Router/Router.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
