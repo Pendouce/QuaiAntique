@@ -11981,12 +11981,12 @@ html {
 }
 
 main {
-  margin-bottom: 250px;
+  margin-bottom: 15px;
 }
 
-footer.footer {
+footer .footer {
   padding: 15px;
-  position: static;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
