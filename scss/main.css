@@ -11981,14 +11981,14 @@ html {
 }
 
 main {
-  margin-bottom: 15px;
+  margin-bottom: 250px;
 }
 
-footer .footer {
+.footer footer {
   padding: 15px;
   position: absolute;
-  bottom: 0;
   width: 100%;
+  bottom: 0;
 }
 
 p {
@@ -12046,4 +12046,13 @@ p {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: all 0.3s;
+}
+
+.menu-content {
+  transition: all 0.3s ease-in-out; /* Transition fluide de toutes les propriétés sur 0.3 secondes */
+}
+
+.menu-content:hover {
+  transform: scale(1.1); /* Agrandissement de 10% au survol */
+  opacity: 0.8; /* Légère diminution de l'opacité */
 }/*# sourceMappingURL=main.css.map */
