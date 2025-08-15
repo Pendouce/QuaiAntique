@@ -108,3 +108,11 @@ p {
 .form-label {
   color: $primary;
 }
+
+.allReservation {
+  a {
+    display: flex;
+    color: $black;
+    padding: 10px;
+  }
+}

@@ -12072,4 +12072,10 @@ p {
 
 .form-label {
   color: #906427;
+}
+
+.allReservation a {
+  display: flex;
+  color: #292222;
+  padding: 10px;
 }/*# sourceMappingURL=main.css.map */
