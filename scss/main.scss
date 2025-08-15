@@ -27,6 +27,7 @@ p {
 // Caller en haut et a gauche
 .hero-scene {
   position: relative;
+  margin-bottom: 11px;
   &::before {
     content: "";
     position: absolute;
@@ -89,4 +90,8 @@ p {
 .menu-content:hover {
   transform: scale(1.1); /* Agrandissement de 10% au survol */
   opacity: 0.8; /* Légère diminution de l'opacité */
+}
+
+.form-label {
+  color: $primary;
 }

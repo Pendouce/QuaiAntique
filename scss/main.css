@@ -11998,6 +11998,7 @@ p {
 
 .hero-scene {
   position: relative;
+  margin-bottom: 11px;
 }
 .hero-scene::before {
   content: "";
@@ -12055,4 +12056,8 @@ p {
 .menu-content:hover {
   transform: scale(1.1); /* Agrandissement de 10% au survol */
   opacity: 0.8; /* Légère diminution de l'opacité */
+}
+
+.form-label {
+  color: #906427;
 }/*# sourceMappingURL=main.css.map */
