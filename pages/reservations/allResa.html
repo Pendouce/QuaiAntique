@@ -27,4 +27,58 @@
     <span>5 personnes |</span>
     <span>Pas d'allergie</span>
   </a>
+
+  <div class="text-center p-4">
+    <button
+      type="button"
+      class="btn btn-danger"
+      data-bs-toggle="modal"
+      data-bs-target="#annulerResa"
+    >
+      Annuler ma reservation
+    </button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="annulerResa"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="annulerResaLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="annulerResaLabel">
+          Etes-vous sûre de vouloir annuler la reservation ?
+        </h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <a href="#">
+          <span>12/05/2025 |</span>
+          <span>18h30 |</span>
+          <span>5 personnes |</span>
+          <span>Pas d'allergie</span>
+        </a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+        <button type="button" class="btn btn-primary">
+          Annuler la reservation
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
