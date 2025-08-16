@@ -1,0 +1,102 @@
+<div class="hero-scene text-center text-white">
+  <div class="hero-scene-content">
+    <h1>Modifier La Carte</h1>
+  </div>
+</div>
+
+<div class="container text-center mt-4">
+  <h2 class="text-primary p-4">Modifier un Plat / Ajouter un Plat</h2>
+  <div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+      <h1>Modifier La Carte</h1>
+    </div>
+  </div>
+
+  <div class="container text-center mt-4">
+    <h2 class="text-primary p-4">Modifier un Plat / Ajouter un Plat</h2>
+    <form>
+      <div class="text-start">
+        <div class="mb-3">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="menuChoisi"
+            id="signatureRadio"
+          />
+          <label class="form-label" for="signatureRadio">Menu Signature</label>
+        </div>
+        <div class="mb-3">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="menuChoisi"
+            id="decouverteRadio"
+          />
+          <label class="form-label" for="decouverteRadio"
+            >Menu Découverte</label
+          >
+        </div>
+        <div class="mb-3">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="menuChoisi"
+            id="carteRadio"
+            checked
+          />
+          <label class="form-label" for="carteRadio">La carte</label>
+        </div>
+      </div>
+
+      <div class="p-4">
+        <label for="selectPlat" class="form-label"
+          >Sélectionner la carte à modifier</label
+        >
+        <select name="menu" id="selectPlat" class="form-select">
+          <option value="Entrée">Entrée</option>
+          <option value="Plat">Plat</option>
+          <option value="Dessert">Dessert</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="nomInput" class="form-label pt-4 mb-3">Nom du plat</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nomInput"
+          placeholder="Nom du plat"
+          value="Salade César"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="descriptionInput" class="form-label pt-4 mb-3">
+          Description du plat</label
+        >
+        <textarea
+          name="description"
+          class="form-control"
+          id="descriptionInput"
+          placeholder="Description du plat"
+        ></textarea>
+      </div>
+      <div>
+        <label for="prixInput" class="form-label pt-4 mb-3">Prix du plat</label>
+        <input
+          type="text"
+          class="form-control"
+          id="prixInput"
+          placeholder="Prix en euros"
+          value="12.50 €"
+        />
+      </div>
+      <div class="text-center p-4 mt-3">
+        <button type="submit" class="btn btn-primary">Ajouter le plat</button>
+        <button type="submit" class="btn btn-primary">Modifier le plat</button>
+      </div>
+      <div class="text-center p-2">
+        <button type="submit" class="btn btn-danger">Supprimer le plat</button>
+      </div>
+    </form>
+  </div>
+</div>

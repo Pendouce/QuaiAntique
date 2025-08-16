@@ -13,7 +13,7 @@
         type="text"
         class="form-control"
         id="nomInput"
-        placeholder="Votre prenom"
+        placeholder="Votre nom"
         value="Doe"
       />
     </div>
@@ -24,7 +24,7 @@
         type="text"
         class="form-control"
         id="prenomInput"
-        placeholder="Votre nom"
+        placeholder="Votre prenom"
         value="Jhon"
       />
     </div>
@@ -50,42 +50,44 @@
     </div>
     <div class="mb-3">
       <label for="dateInput" class="form-label">Date</label>
-      <input
-        type="date"
-        class="form-control"
-        id="dateInput"
-      />
+      <input type="date" class="form-control" id="dateInput" />
     </div>
-      <div class="mb-3">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="serviceChoisi" id="midiRadio">
-                <label class="form-check-label" for="midiRadio">
-                    Midi
-                </label>
-                </div>
-                <div class="form-check">
-                <input class="form-check-input" type="radio" name="serviceChoisi" id="soirRadio" checked>
-                <label class="form-check-label" for="soirRadio">
-                    Soir
-                </label>
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="selectHour" class="form-label">Heure</label>
-            <select class="form-select" id="selectHour" name="Heure">
-                <option>19:30</option>
-                <option>19:45</option>
-                <option>20:00</option>
-                <option>20:15</option>
-                <option>20:30</option>
-                <option>20:45</option>
-                <option>21:00</option>
-            </select>
-        </div>
+    <div class="mb-3">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="serviceChoisi"
+          id="midiRadio"
+        />
+        <label class="form-check-label" for="midiRadio"> Midi </label>
       </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="serviceChoisi"
+          id="soirRadio"
+          checked
+        />
+        <label class="form-check-label" for="soirRadio"> Soir </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="selectHour" class="form-label">Heure</label>
+      <select class="form-select" id="selectHour" name="Heure">
+        <option>19:30</option>
+        <option>19:45</option>
+        <option>20:00</option>
+        <option>20:15</option>
+        <option>20:30</option>
+        <option>20:45</option>
+        <option>21:00</option>
+      </select>
+    </div>
     <div class="text-center pt-3">
-      <button type="submit" class="btn btn-primary">Reserver</button>
-      <button type="button" class="btn btn-danger">Annuler</buttont>
+      <button type="button" class="btn btn-primary">Reserver</button>
+      <button type="button" class="btn btn-danger">Annuler</button>
     </div>
   </form>
-<div> 
+</div>

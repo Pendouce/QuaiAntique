@@ -15,6 +15,7 @@ export const allRoutes = [
   ),
   new Route("/allresa", "Vos reservations", "/pages/reservations/allResa.html"),
   new Route("/reserver", "Reserver", "/pages/reservations/reserver.html"),
+  new Route("/modifCarte", "Modifier la carte", "/pages//modifCarte.html"),
 ];
 //Le titre s'affiche comme ceci : Route.titre - websitename
 export const websiteName = "Quai Antique";
