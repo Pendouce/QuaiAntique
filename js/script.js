@@ -1,5 +1,16 @@
 //Reference permettant de recuperer le cookie
 const tokenCookieName = "accessToken";
+const signoutBtn = document.getElementById("signout-btn");
+
+signoutBtn?.addEventListener("click", signout);
+
+//deconexion
+function signout() {
+  //efface le cookie
+  eraseCookie(tokenCookieName);
+  //redirection vers la page d'accueil
+  window.location.reload();
+}
 
 //place le token dans un cookie
 //cookie valide pendant 7 jours
@@ -48,8 +59,8 @@ function isConnected() {
   }
 }
 
-if (isConnected()) {
-  alert("Je suis connecté");
-} else {
-  alert("Je ne suis pas connecté");
-}
+//if (isConnected()) {
+//  alert("Je suis connecté");
+//} else {
+//  alert("Je ne suis pas connecté");
+//}
