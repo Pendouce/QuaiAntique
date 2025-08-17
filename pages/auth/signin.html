@@ -14,13 +14,16 @@
         id="emailInput"
         placeholder="paulandre@email.fr"
       />
+      <div class="invalid-feedback">Email ou mot de passe incorrect</div>
     </div>
     <div class="mb-3">
       <label for="passwordInput" class="form-label">Mot de passe</label>
       <input type="password" class="form-control" id="passwordInput" />
     </div>
     <div class="text-center pt-3">
-      <button type="submit" class="btn btn-primary">Connexion</button>
+      <button type="button" class="btn btn-primary" id="btnSignin">
+        Connexion
+      </button>
     </div>
     <div class="text-center pt-5">
       <a href="/signup">Vous n'avez pas de compte ? Inscrivez vous ici !</a>
