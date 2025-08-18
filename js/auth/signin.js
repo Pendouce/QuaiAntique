@@ -13,10 +13,12 @@ function checkCredentials() {
     // @ts-ignore
     passwordInput.value == "azerty"
   ) {
-    //il faudra recuperer le vrai token
+    //Recuperation du token qui nous permet de savoir si l'utilisateur est connecté
     const token = "kjhgfdsxcvbnj,k:;k,jhgfdsxcvbn";
     setToken(token);
-    //placer se token en cookie
+
+    setCookie(roleCookieName, "admin", 7); // Set role cookie for 7 days
+
     window.location.replace("/");
   } else {
     mailInput?.classList.add("is-invalid");

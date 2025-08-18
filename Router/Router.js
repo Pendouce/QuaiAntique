@@ -1,4 +1,3 @@
-
 import Route from "./Route.js";
 import { allRoutes, websiteName } from "./allRoutes.js";
 // Création d'une route pour la page 404 (page introuvable)
@@ -9,7 +8,6 @@ const getRouteByUrl = (url) => {
   // Parcours de toutes les routes pour trouver la correspondance
   allRoutes.forEach((element) => {
     if (element.url == url) {
-
       currentRoute = element;
     }
   });
@@ -40,6 +38,9 @@ const LoadContentPage = async () => {
   }
   // Changement du titre de la page
   document.title = actualRoute.title + " - " + websiteName;
+
+  // Afficher et masquer les éléments en fonction de l'état du role
+  showAndHideElementsForRoles();
 };
 // Fonction pour gérer les événements de routage (clic sur les liens)
 const routeEvent = (event) => {

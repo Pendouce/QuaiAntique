@@ -1,13 +1,19 @@
 //Reference permettant de recuperer le cookie
 const tokenCookieName = "accessToken";
-const signoutBtn = document.getElementById("signout-btn");
+const roleCookieName = "role";
 
+const signoutBtn = document.getElementById("signout-btn");
 signoutBtn?.addEventListener("click", signout);
+
+function getRole() {
+  return getCookie(roleCookieName);
+}
 
 //deconexion
 function signout() {
   //efface le cookie
   eraseCookie(tokenCookieName);
+  eraseCookie(roleCookieName);
   //redirection vers la page d'accueil
   window.location.reload();
 }
@@ -64,3 +70,45 @@ function isConnected() {
 //} else {
 //  alert("Je ne suis pas connecté");
 //}
+
+/*
+  disconected
+  connected(admin ou client)
+    admin
+    client
+*/
+
+function showAndHideElementsForRoles() {
+  const userConnected = isConnected();
+  const role = getRole();
+
+  let allElementsToEdit = document.querySelectorAll("[data-show]");
+  //Parcourir tous les elements qui ont un data-show
+  //et pour chaque elements regarder la valeur de data-show
+  //et afficher ou cacher l'element en fonction de la valeur de data-show
+  allElementsToEdit.forEach((element) => {
+    // @ts-ignore
+    switch (element.dataset.show) {
+      case "disconnected": //si utilitasteur connecter il ne voit pas le bouton connexion
+        if (userConnected) {
+          element.classList.add("d-none");
+        }
+        break;
+      case "connected": //si utilisateur non connecter il ne voit pas le bouton deconnexion
+        if (!userConnected) {
+          element.classList.add("d-none");
+        }
+        break;
+      case "admin":
+        if (!userConnected || role != "admin") {
+          element.classList.add("d-none");
+        }
+        break;
+      case "client":
+        if (!userConnected || role != "client") {
+          element.classList.add("d-none");
+        }
+        break;
+    }
+  });
+}

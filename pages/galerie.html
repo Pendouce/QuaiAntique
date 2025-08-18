@@ -5,7 +5,7 @@
 </div>
 
 <div class="container">
-  <div class="text-center">
+  <div class="text-center" data-show="admin">
     <button
       type="button"
       class="btn btn-primary m-4"
@@ -24,8 +24,9 @@
           alt="image d'un pavé de saumon"
         />
         <p class="titre-image">titre</p>
-        <div class="actcion-image-buttons">
+        <div class="actcion-image-buttons" data-show="admin">
           <button
+            type="button"
             class="btn btn-outline-light"
             data-bs-toggle="modal"
             data-bs-target="#editionPhotoModal"
@@ -33,6 +34,7 @@
             <i class="bi bi-pencil-square"></i>
           </button>
           <button
+            type="button"
             class="btn btn-outline-light"
             data-bs-toggle="modal"
             data-bs-target="#deletePhotoModal"
@@ -94,7 +96,9 @@
     </div>
   </div>
   <div class="text-center">
-    <a href="/reservation"><button class="btn btn-primary">Reserver</button></a>
+    <a href="/reservation"
+      ><button class="btn btn-primary" data-show="client">Reserver</button></a
+    >
   </div>
 </div>
 
