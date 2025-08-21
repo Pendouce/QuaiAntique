@@ -1,7 +1,7 @@
 import Route from "./Route.js";
 import { allRoutes, websiteName } from "./allRoutes.js";
 // Création d'une route pour la page 404 (page introuvable)
-const route404 = new Route("404", "Page introuvable", "/pages/404.html");
+const route404 = new Route("404", "Page introuvable", "/pages/404.html", []);
 // Fonction pour récupérer la route correspondant à une URL donnée
 const getRouteByUrl = (url) => {
   let currentRoute = null;
@@ -23,6 +23,24 @@ const LoadContentPage = async () => {
   const path = window.location.pathname;
   // Récupération de l'URL actuelle
   const actualRoute = getRouteByUrl(path);
+
+  //Verifier les droits d'accès a la page
+  const allRolesArray = actualRoute.authorize;
+
+  if (allRolesArray.length > 0) {
+    if (allRolesArray.includes("disconnected")) {
+      if (isConnected()) {
+        // Si l'utilisateur est connecté et que la route est réservée aux déconnectés, on redirige vers la page d'accueil
+        window.location.repalce("/");
+      }
+    } else {
+      const roleUser = getRole();
+      if (!allRolesArray.includes(roleUser)) {
+        window.location.replace("/"); // L'utilisateur est un client, on continue
+      }
+    }
+  }
+
   // Récupération du contenu HTML de la route
   const html = await fetch(actualRoute.pathHtml).then((data) => data.text());
   // Ajout du contenu HTML à l'élément avec l'ID "main-page"
