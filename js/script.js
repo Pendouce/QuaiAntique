@@ -71,6 +71,14 @@ function isConnected() {
 //  alert("Je ne suis pas connecté");
 //}
 
+const loader = document.getElementById("loader");
+document.addEventListener("DOMContentLoaded", () => {
+  showAndHideElementsForRoles();
+  // Masquer le loader
+  const loader = document.getElementById("loader");
+  if (loader) loader.classList.add("d-none");
+});
+
 /*
   disconected
   connected(admin ou client)
