@@ -6,12 +6,15 @@ const inputMail = document.getElementById("emailInput");
 const inputPassword = document.getElementById("passwordInput");
 const inputValidatePassword = document.getElementById("validatePasswordInput");
 const btnValidation = document.getElementById("btn-validaton-inscription");
+const formInscription = document.getElementById("formulaire-inscription");
 
 inputNom?.addEventListener("keyup", validateForm);
 inputPrenom?.addEventListener("keyup", validateForm);
 inputMail?.addEventListener("keyup", validateForm);
 inputPassword?.addEventListener("keyup", validateForm);
 inputValidatePassword?.addEventListener("keyup", validateForm);
+
+btnValidation?.addEventListener("click", inscricreUtilisateur);
 
 //Valider les champs requis du formulaire
 function validateForm() {
@@ -96,4 +99,40 @@ function validateRequired(input) {
     input.classList.add("is-invalid");
     return false;
   }
+}
+
+function inscricreUtilisateur() {
+  //Récupérer les données du formulaire
+  let dataForm = new FormData(formInscription);
+
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const raw = JSON.stringify({
+    firstName: dataForm.get("nom"),
+    lastName: dataForm.get("prenom"),
+    email: dataForm.get("email"),
+    password: dataForm.get("mdp"),
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+  };
+
+  fetch("http://127.0.0.1:8000/api/registration", requestOptions)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        alert("Erreur dans l'inscription");
+      }
+    })
+    .then((result) => {
+      alert("Vous etes maintenant inscrit vous pouvez vous connectez");
+      document.location.href = "/signin";
+    })
+    .catch((error) => console.error(error));
 }

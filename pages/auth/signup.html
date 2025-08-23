@@ -5,7 +5,7 @@
 </div>
 
 <div class="container">
-  <form class="p-4 mt-5">
+  <form class="p-4 mt-5" id="formulaire-inscription">
     <div class="mb-3">
       <label for="nomInput" class="form-label">Nom</label>
       <input
@@ -13,6 +13,7 @@
         class="form-control"
         id="nomInput"
         placeholder="Votre nom"
+        name="nom"
       />
       <div class="invalid-feedback">Veuillez entrer votre nom</div>
     </div>
@@ -23,6 +24,7 @@
         class="form-control"
         id="prenomInput"
         placeholder="Votre prenom"
+        name="prenom"
       />
       <div class="invalid-feedback">Veuillez entrer votre prenom</div>
     </div>
@@ -33,12 +35,18 @@
         class="form-control"
         id="emailInput"
         placeholder="paulandre@email.fr"
+        name="email"
       />
       <div class="invalid-feedback">Veuillez entrer un email valide</div>
     </div>
     <div class="mb-3">
       <label for="passwordInput" class="form-label">Mot de passe</label>
-      <input type="password" class="form-control" id="passwordInput" />
+      <input
+        type="password"
+        class="form-control"
+        id="passwordInput"
+        name="mdp"
+      />
       <div class="invalid-feedback">
         Votre mot de passe doit contenir au moins 8 caracteres, une majuscule,
         une minuscule et un chiffre.
@@ -55,7 +63,7 @@
     </div>
     <div class="text-center pt-3">
       <button
-        type="submit"
+        type="button"
         class="btn btn-primary"
         id="btn-validaton-inscription"
       >
