@@ -2,11 +2,53 @@
 const mailInput = document.getElementById("emailInput");
 const passwordInput = document.getElementById("passwordInput");
 const btnSignin = document.getElementById("btnSignin");
+const signinForm = document.getElementById("signinForm");
 
 mailInput?.addEventListener("keyup", validateForm);
 passwordInput?.addEventListener("keyup", validateForm);
 
 btnSignin?.addEventListener("click", checkCredentials);
+
+function checkCredentials() {
+  let dataForm = new FormData(signinForm);
+
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  const raw = JSON.stringify({
+    username: dataForm.get("email"),
+    password: dataForm.get("mdp"),
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+  };
+
+  fetch(apiurl + "login", requestOptions)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        mailInput?.classList.add("is-invalid");
+        passwordInput?.classList.add("is-invalid");
+      }
+    })
+    .then((result) => {
+      //api token recuperré lors du test sur l'api
+      //je prends token je le stocke en cookie
+      //et je le recupere dans le script.js
+      //pareil pour le role
+      const token = result.token;
+      setToken(token);
+      setCookie(roleCookieName, result.roles[0], 7); // Set role cookie for 7 days
+
+      window.location.replace("/");
+    })
+    .catch((error) => console.error(error));
+}
 
 //Valider les champs requis du formulaire
 function validateForm() {
@@ -71,26 +113,5 @@ function validatePassword(input) {
     input.classList.remove("is-valid");
     input.classList.add("is-invalid");
     return false;
-  }
-}
-
-function checkCredentials() {
-  //infos factices appeler l'api pour verifienr les credentals en bdd
-  if (
-    // @ts-ignore
-    mailInput.value == "test@mail.com" &&
-    // @ts-ignore
-    passwordInput.value == "azerty"
-  ) {
-    //Recuperation du token qui nous permet de savoir si l'utilisateur est connecté
-    const token = "kjhgfdsxcvbnj,k:;k,jhgfdsxcvbn";
-    setToken(token);
-
-    setCookie(roleCookieName, "admin", 7); // Set role cookie for 7 days
-
-    window.location.replace("/");
-  } else {
-    mailInput?.classList.add("is-invalid");
-    passwordInput?.classList.add("is-invalid");
   }
 }

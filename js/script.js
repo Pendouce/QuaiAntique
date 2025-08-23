@@ -1,6 +1,7 @@
 //Reference permettant de recuperer le cookie
 const tokenCookieName = "accessToken";
 const roleCookieName = "role";
+const apiurl = "http://127.0.0.1:8000/api/";
 
 const signoutBtn = document.getElementById("signout-btn");
 signoutBtn?.addEventListener("click", signout);
