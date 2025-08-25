@@ -1,9 +1,9 @@
 //Reference permettant de recuperer le cookie
 const tokenCookieName = "accessToken";
 const roleCookieName = "role";
-const apiurl = "http://127.0.0.1:8000/api/";
-
 const signoutBtn = document.getElementById("signout-btn");
+const apiUrl = "http://127.0.0.1:8000/api/";
+
 signoutBtn?.addEventListener("click", signout);
 
 function getRole() {
@@ -132,4 +132,30 @@ function sanitizeHtml(text) {
   // Utilisez .innerHTML pour récupérer le contenu de "tempHtml"
   // Cela va "neutraliser" ou "échapper" tout code HTML potentiellement malveillant
   return tempHtml.innerHTML;
+}
+
+function getInfosUser() {
+  const myHeaders = new Headers();
+  myHeaders.append("X-AUTH-TOKEN", getToken());
+
+  const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  fetch(apiUrl + "account/me", requestOptions)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log("Impossible de reccuperer les informations utilisateur");
+      }
+    })
+    .then((result) => {
+      return result;
+    })
+    .catch((error) => {
+      console.error("Erreur lors de la recuperation des données", error);
+    });
 }
