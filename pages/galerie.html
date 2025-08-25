@@ -15,86 +15,9 @@
       Ajouter une photo
     </button>
   </div>
-  <div class="row row-cols-2 row-cols-lg-3">
-    <div class="col p-4">
-      <div class="image-card text-white">
-        <img
-          class="rounded w-100"
-          src="../img/Saumon.jpg"
-          alt="image d'un pavé de saumon"
-        />
-        <p class="titre-image">titre</p>
-        <div class="actcion-image-buttons" data-show="admin">
-          <button
-            type="button"
-            class="btn btn-outline-light"
-            data-bs-toggle="modal"
-            data-bs-target="#editionPhotoModal"
-          >
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button
-            type="button"
-            class="btn btn-outline-light"
-            data-bs-toggle="modal"
-            data-bs-target="#deletePhotoModal"
-          >
-            <i class="bi bi-trash"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col p-4">
-      <div class="image-card text-white">
-        <img
-          class="rounded w-100"
-          src="../img/lasagna-5994612_640 (1).jpg"
-          alt="image d'une lasagne dressée"
-        />
-        <p class="titre-image">titre</p>
-      </div>
-    </div>
-    <div class="col p-4">
-      <div class="image-card text-white">
-        <img
-          class="rounded w-100"
-          src="../img/pancakes-5989136_640.jpg"
-          alt="image d'une assiete de pancake"
-        />
-        <p class="titre-image">titre</p>
-      </div>
-    </div>
-    <div class="col p-4">
-      <div class="image-card text-white">
-        <img
-          class="rounded w-100"
-          src="../img/food-asiat.jpg"
-          alt="image d'un bol de nouriture asiatique"
-        />
-        <p class="titre-image">titre</p>
-      </div>
-    </div>
-    <div class="col p-4">
-      <div class="image-card text-white">
-        <img
-          class="rounded w-100"
-          src="../img/mossel-dish-7724006_640.jpg"
-          alt="image d'une assiete de pates aux fruits de mer"
-        />
-        <p class="titre-image">titre</p>
-      </div>
-    </div>
-    <div class="col p-4">
-      <div class="image-card text-white">
-        <img
-          class="rounded w-100"
-          src="../img/hamburger-8026582_640.jpg"
-          alt="image d'un hamburger"
-        />
-        <p class="titre-image">titre</p>
-      </div>
-    </div>
-  </div>
+
+  <div class="row row-cols-2 row-cols-lg-3" id="allImages"></div>
+
   <div class="text-center">
     <a href="/reservation"
       ><button class="btn btn-primary" data-show="client">Reserver</button></a
@@ -178,7 +101,11 @@
         <form class="p-4">
           <div class="mb-3">
             <p>Titre</p>
-            <img src="../img/hamburger-8026582_640.jpg" class="img-fluid" />
+            <img
+              src="../img/hamburger-8026582_640.jpg"
+              class="img-fluid"
+              alt="Hamburger"
+            />
           </div>
           <div class="text-center pt-3">
             <button type="button" class="btn btn-danger">Supprimer</button>
